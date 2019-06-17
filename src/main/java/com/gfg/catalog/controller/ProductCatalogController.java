@@ -49,7 +49,7 @@ public class ProductCatalogController {
     return new ResponseEntity<>(productService.findAll(), HttpStatus.OK);
   }
 
-  @ApiOperation(value = "search by title and description")
+  @ApiOperation(value = "Search by title and description including pagination and sorting.")
   @GetMapping("/search")
   public ResponseEntity<APIPagination> search(
       @ApiParam(value = "title", example = "product")
@@ -101,7 +101,7 @@ public class ProductCatalogController {
   }
 
 
-  @ApiOperation(value = "update product")
+  @ApiOperation(value = "Update product by id")
   @PutMapping("/{id}")
   public ResponseEntity<ProductDTO> update(
       @Valid
