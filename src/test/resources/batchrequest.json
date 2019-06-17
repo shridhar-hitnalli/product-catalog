@@ -1,0 +1,81 @@
+{
+  "productInputRequestList": [
+    {
+      "brand": "US Polo",
+      "color": "white",
+      "description": "half sleeves",
+      "price": 14.8,
+      "title": "T-shirt"
+    },
+    {
+      "brand": "Nike",
+      "color": "Black",
+      "description": "Sports shoes",
+      "price": 12.8,
+      "title": "Shoes"
+    },
+    {
+      "brand": "Woodland",
+      "color": "purple",
+      "description": "Sneakers",
+      "price": 18.2,
+      "title": "Shoes"
+    },
+    {
+      "brand": "Arrows",
+      "color": "blue",
+      "description": "Full sleeves",
+      "price": 12.8,
+      "title": "Trousers"
+    },
+    {
+      "brand": "US Polo American",
+      "color": "white",
+      "description": "Full sleeves",
+      "price": 10.8,
+      "title": "shirt"
+    },
+    {
+      "brand": "Blackberry",
+      "color": "Black",
+      "description": "Trousers slim",
+      "price": 18.8,
+      "title": "Trousers"
+    },
+    {
+      "brand": "Red Tape",
+      "color": "Brown",
+      "description": "Shoes trekking",
+      "price": 10.8,
+      "title": "Shoes"
+    },
+    {
+      "brand": "Nice",
+      "color": "purple",
+      "description": "half sleeves",
+      "price": 10.2,
+      "title": "T-shirt"
+    },
+    {
+      "brand": "Adidas",
+      "color": "dark blue",
+      "description": "Sports shoes",
+      "price": 12.8,
+      "title": "Shoes"
+    },
+    {
+      "brand": "Hush puppies",
+      "color": "black",
+      "description": "Formal shoes",
+      "price": 11.8,
+      "title": "Shoes"
+    },
+    {
+      "brand": "US Polo American",
+      "color": "sky blue",
+      "description": "slim fit",
+      "price": 13.5,
+      "title": "shirt"
+    }
+  ]
+}
