@@ -1,4 +1,5 @@
 FROM openjdk:8-jdk-alpine
-CMD java -jar /app/catalog-0.0.1-SNAPSHOT.jar
+VOLUME /tmp
+ADD target/catalog-0.0.1-SNAPSHOT.jar catalog-api.jar
 EXPOSE 9999
-ADD ./app/catalog-0.0.1-SNAPSHOT.jar /app/catalog-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/catalog-api.jar"]
