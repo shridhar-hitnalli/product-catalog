@@ -7,6 +7,7 @@ Build a catalog API service.
 * Spring Boot
 * Database H2 (In-Memory)
 * Maven
+* Docker
 
 ## Running
 
@@ -41,15 +42,44 @@ $ docker run -p 9999:9999 -it --rm catalog-api
 
 
 ### Backend consists following restful apis
-    a. GET /v1/products : fetch all products (bulk fetch)
-    b. POST /v1/products : create single product object
-    c. GET /v1/products/{id} : fetch product by id
-    d. GET /v1/products/search?title=product&description=desc&pageNumber=1&pageSize=5&sort=price,-brand : search by title and description including pagination and sorting
-    e. POST /v1/products/batch : create batch inserts
-    f. PUT /v1/products/{id} : update product by id
-    g. DELETE /v1/products/{id} : delete product by id
+##### Fetch all products in a single request (batch fetch)
+```
+ GET /v1/products
+```
+
+##### Create more than one product in a single request (batch create)
+```
+ POST /v1/products/batch
+```
+
+##### Create a single product
+```
+ POST /v1/products
+```
+
+##### Fetch product by 'id'
+```
+ GET /v1/products/{id}
+```
+
+##### Search by title and description
+Search by title and description including pagination and sorting (Default ASC sort and '-' for DESC for e.g: price,-brand).
+This API fetch all the records if title and description fields are not provided
+```
+ GET /v1/products/search?title=product&description=desc&pageNumber=1&pageSize=5&sort=price,-brand 
+```
+
+##### Update product by id
+```
+PUT /v1/products/{id}
+```
+
+##### Delete product by id
+```
+DELETE /v1/products/{id}
+```
     
-  
+ 
 ### Security - Basic Authentication
 Please check *application.properties* file *'spring.security.basic.username'* and *'spring.security.basic.password'* fields for login credentials
 
