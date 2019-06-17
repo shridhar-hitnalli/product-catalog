@@ -25,6 +25,9 @@ import org.springframework.http.HttpStatus;
 @EnableAutoConfiguration
 public class ProductCatalogControllerTest extends BaseApplicationTest {
 
+  private static final String username = "admin";
+  private static final String password = "gfg123";
+
   @Before
   public void setup() {}
 
@@ -62,7 +65,7 @@ public class ProductCatalogControllerTest extends BaseApplicationTest {
     log.info("Create product success:::");
     given()
         .auth()
-        .basic("admin", "gfg123")
+        .basic(username, password)
         .baseUri("http://localhost")
         .port(port)
         .contentType("application/json")
@@ -79,7 +82,7 @@ public class ProductCatalogControllerTest extends BaseApplicationTest {
     ProductDTO productDTO =
         given()
             .auth()
-            .basic("admin", "gfg123")
+            .basic(username, password)
             .baseUri("http://localhost")
             .port(port)
             .contentType("application/json")
@@ -104,7 +107,7 @@ public class ProductCatalogControllerTest extends BaseApplicationTest {
     ProductDTO productDTO =
         given()
             .auth()
-            .basic("admin", "gfg123")
+            .basic(username, password)
             .baseUri("http://localhost")
             .port(port)
             .contentType("application/json")
@@ -129,7 +132,7 @@ public class ProductCatalogControllerTest extends BaseApplicationTest {
     log.info("Delete product by id success:::");
     given()
         .auth()
-        .basic("admin", "gfg123")
+        .basic(username, password)
         .baseUri("http://localhost")
         .port(port)
         .contentType("application/json")
@@ -145,7 +148,7 @@ public class ProductCatalogControllerTest extends BaseApplicationTest {
     ProductList productListOutput =
     given()
         .auth()
-        .basic("admin", "gfg123")
+        .basic(username, password)
         .baseUri("http://localhost")
         .port(port)
         .contentType("application/json")
@@ -172,7 +175,7 @@ public class ProductCatalogControllerTest extends BaseApplicationTest {
     ProductList productListOutput =
         given()
             .auth()
-            .basic("admin", "gfg123")
+            .basic(username, password)
             .baseUri("http://localhost")
             .port(port)
             .contentType("application/json")
@@ -199,7 +202,7 @@ public class ProductCatalogControllerTest extends BaseApplicationTest {
     APIPagination apiPagination =
         given()
             .auth()
-            .basic("admin", "gfg123")
+            .basic(username, password)
             .baseUri("http://localhost")
             .port(port)
             .contentType("application/json")

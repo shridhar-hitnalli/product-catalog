@@ -1,6 +1,7 @@
 package com.gfg.catalog.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,6 +14,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class BasicAuthSecurity extends WebSecurityConfigurerAdapter {
+
+  @Value("${spring.security.basic.username}")
+  private String username;
+
+  @Value("${spring.security.basic.password}")
+  private String password;
 
   private final BasicAuthentication basicAuthentication;
 
@@ -35,8 +42,8 @@ public class BasicAuthSecurity extends WebSecurityConfigurerAdapter {
   @Autowired
   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
     auth.inMemoryAuthentication()
-        .withUser("admin")
-        .password(passwordEncoder.encode("gfg123"))
+        .withUser(username)
+        .password(passwordEncoder.encode(password))
         .roles("USER");
 
   }
